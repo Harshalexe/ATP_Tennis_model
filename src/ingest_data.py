@@ -16,7 +16,7 @@ class ZipDataIngestor(data_ingestor):
             raise ValueError("File is not a zip file")
         
         with zipfile.ZipFile(file_path, "r") as z:
-            z.extractall("extracted_data")
+            z.extractall("../extracted_data")
 
         extracted_files= os.listdir("extracted_data")
         if not extracted_files:
@@ -29,3 +29,24 @@ class ZipDataIngestor(data_ingestor):
         
         csv_file_data = os.path.join("extracted_data", csv_files[0])
         df = pd.read_csv(csv_file_data)
+
+        return df
+    
+
+class DataIngestorMain:
+    def get_data_ingestor(files_extension: str) -> data_ingestor:
+        if files_extension == '.zip':
+            return ZipDataIngestor()
+        else:
+            raise ValueError(f"Unsupported file extension: {files_extension}. Only .zip files are supported.")
+        
+
+if __name__ == "__main__":
+
+    file_extension = ".zip" 
+    ingestor = DataIngestorMain.get_data_ingestor(file_extension)
+    file_path = "D:\\Code\\machine Learning & projects\\ATP_tennis_model\\data\\archive.zip"
+    df=ingestor.ingest_data(file_path)
+    print(df.head())
+
+    
