@@ -1,0 +1,9 @@
+We are going to perform preditions of every levels in Cricket.
+ball-level: Predict next ball
+wicket-level: Predict wicket in next ball
+over-level: predict total runs in next overs/ estimating inings runs/ prediciting wining score % in 2nd ining.
+match-level: Predict who wins.
+batmans/bowler similar players (if possible) / Player Ranking
+
+
+https://www.kaggle.com/code/pranjalverma08/detailed-analysis-of-ipl-data-2008-2020

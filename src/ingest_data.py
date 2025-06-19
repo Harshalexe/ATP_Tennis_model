@@ -16,9 +16,9 @@ class ZipDataIngestor(data_ingestor):
             raise ValueError("File is not a zip file")
         
         with zipfile.ZipFile(file_path, "r") as z:
-            z.extractall("../extracted_data")
+            z.extractall("zip_data")
 
-        extracted_files= os.listdir("extracted_data")
+        extracted_files= os.listdir("zip_data")
         if not extracted_files:
             raise ValueError("No files found in the zip archive")
         csv_files = [f for f in extracted_files if f.endswith('.csv')]
@@ -26,8 +26,8 @@ class ZipDataIngestor(data_ingestor):
             raise FileNotFoundError("No CSV files found in the zip archive")
         if len(csv_files) > 1:
             raise ValueError("Multiple CSV files found in the zip archive, please specify which one to use")
-        
-        csv_file_data = os.path.join("extracted_data", csv_files[0])
+
+        csv_file_data = os.path.join("zip_data", csv_files[0])
         df = pd.read_csv(csv_file_data)
 
         return df
@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     file_extension = ".zip" 
     ingestor = DataIngestorMain.get_data_ingestor(file_extension)
-    file_path = "D:\\Code\\machine Learning & projects\\ATP_tennis_model\\data\\archive.zip"
+    file_path = "D:\\Code\\machine Learning & projects\\ATP_tennis_model\\data\\2008-2024.zip"
     df=ingestor.ingest_data(file_path)
     print(df.head())
 
