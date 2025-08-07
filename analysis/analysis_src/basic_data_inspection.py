@@ -35,7 +35,7 @@ class summaryInspector(DataInspector):
         print("Summary Statistics: for categorical columns")
         print(df.describe(include='object'))
 
-class DataInspectorMain:
+class DataInspectorStrategy:
     def __init__(self, strategy: DataInspector):
         self._strategy = strategy
 

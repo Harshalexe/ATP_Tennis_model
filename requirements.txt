@@ -1,3 +1,6 @@
 pandas
 ipykernel
 seaborn
+langchain
+dotenv
+langchain_groq
