@@ -7,3 +7,18 @@ batmans/bowler similar players (if possible) / Player Ranking
 
 
 https://www.kaggle.com/code/pranjalverma08/detailed-analysis-of-ipl-data-2008-2020
+
+
+Marksown:
+
+section:
+--
+--
+example
+--
+--
+
+
+seperator:
+--
+--
