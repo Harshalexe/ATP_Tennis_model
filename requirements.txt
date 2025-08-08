@@ -4,3 +4,4 @@ seaborn
 langchain
 dotenv
 langchain_groq
+numpy

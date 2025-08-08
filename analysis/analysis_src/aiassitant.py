@@ -23,7 +23,7 @@ class ai_assistant:
         prompt=ChatPromptTemplate.from_messages(
             [
                 SystemMessage(content="""You are a professional data analyst with strong domain expertise and critical thinking skills. Your role is to:
-                        Analyze any dataset, data summary, or data info provided to you.
+                        Analyze data summary, or data info provided to you.
                         Give clear, logical, and concise insights that go beyond surface-level observations.
                         Detect and explain any blunders, inconsistencies, or anomalies in the data (e.g., suspicious values, mismatched data types, missing data, redundant columns, or outliers).
                         Suggest possible root causes, business implications, and next steps or fixes.
@@ -58,6 +58,7 @@ class AiAssistant(ai_assistant):
         :param question: str - The question to be answered by the AI model.
         :return: str - The response from the AI model.
         """
-        prompt_with_question=self.prompt.format_prompt(question=question)
+        data= "Here is the summary statistics for both numerical and categorical columns of my dataset:\n\n" + str(question)
+        prompt_with_question=self.prompt.format_prompt(question=data)
         response=self.model.invoke(prompt_with_question)
         return self.output_parser.parse(response.content)
