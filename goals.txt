@@ -5,7 +5,7 @@ over-level: predict total runs in next overs/ estimating inings runs/ predicitin
 match-level: Predict who wins. -> 2008-2024 matches
 batmans/bowler similar players (if possible) / Player Ranking
 
-
+-----------------------------------------------------------------------------------------------------------------------------------
 https://www.kaggle.com/code/pranjalverma08/detailed-analysis-of-ipl-data-2008-2020
 
 
@@ -22,3 +22,4 @@ example
 seperator:
 --
 --
+
