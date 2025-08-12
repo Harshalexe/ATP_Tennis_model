@@ -5,3 +5,4 @@ langchain
 dotenv
 langchain_groq
 numpy
+zenml
